@@ -1,3 +1,3 @@
-[Please visit my homepage](https://danwan1027.github.io)
+[Please visit the lottery page](https://danwan1027.github.io/demo.html)
 
-## Hi there 👋
+## Go win some monney 🤑
