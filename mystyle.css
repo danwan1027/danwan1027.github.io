@@ -1,37 +1,37 @@
-
+/* 第三小題 */
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
-  }
+}
   
-  h1 {
+h1 {
     text-align: center;
     color: #333;
-  }
-  
-  p {
-    color: #666;
-  }
-  
-  input {
+}
+
+p {
+    color: #666;    
+}
+
+input {
     margin: 5px;
     padding: 5px;
-  }
-  
-  button {
+}
+
+button {
     padding: 10px;
     background-color: #4caf50;
     color: #fff;
     border: none;
     cursor: pointer;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background-color: #45a049;
-  }
-  
-  #result {
+}
+
+#result {
     margin-top: 20px;
     font-weight: bold;
-  }
+}
   

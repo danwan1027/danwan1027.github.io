@@ -1,11 +1,12 @@
 var winningNumbersElement = document.getElementById("winningNumbers");
 
+// 此function包含第一小題、第二小題、第五小題
 function checkNumbers() {
   var number1 = parseInt(document.getElementById("number1").value);
   var number2 = parseInt(document.getElementById("number2").value);
   var number3 = parseInt(document.getElementById("number3").value);
 
-  // 輸入檢查
+  // 第五小題 - 輸入檢查
   if (isNaN(number1) || isNaN(number2) || isNaN(number3)) {
     alert("請輸入有效數字！");
     reset();
@@ -63,6 +64,7 @@ function checkNumbers() {
     prize = 3; // 參獎
   }
 
+  // 第二小題 - 顯示中獎訊息
   var resultElement = document.getElementById("result");
   resultElement.innerHTML = "";
 
@@ -74,6 +76,7 @@ function checkNumbers() {
   }
 }
 
+// 第二小題 - 三個獎皆設有不同獎項
 function getPrizeName(prize) {
   switch (prize) {
     case 1:
@@ -87,6 +90,7 @@ function getPrizeName(prize) {
   }
 }
 
+// 第二小題 - 三個獎項皆設有不同金額的中獎獎金
 function getPrizeAmount(prize) {
   switch (prize) {
     case 1:
@@ -100,6 +104,7 @@ function getPrizeAmount(prize) {
   }
 }
 
+// 第四小題 — reset按鈕
 function reset() {
   document.getElementById("number1").value = "";
   document.getElementById("number2").value = "";
