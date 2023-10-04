@@ -2,9 +2,9 @@ let myGraph = document.getElementById('myGraph');
 let trace1 = {}; 
 trace1.mode = "markers+text+lines"; // Include markers, text, and lines
 trace1.type = "scatter"; 
-trace1.name = "Team A";
+trace1.name = "大學以下總人數";
 trace1.marker = {
-    size: 10
+    size: 5
 }
 trace1.x = [];
 trace1.y = [];
@@ -13,10 +13,10 @@ trace1.textposition = 'top center'; // Set text position
 trace1.textfont = {
     size: 10
 }
-for (let i = 0; i < set1.length; i++) { 
-    trace1.x[i] = set1[i][0];
-    trace1.y[i] = set1[i][1];
-    trace1.text[i] = set1[i][1]+'人';
+for (let i = 0; i < total.length; i++) { 
+    trace1.x[i] = total[i][0];
+    trace1.y[i] = total[i][1];
+    trace1.text[i] = total[i][1]+'人';
 }
 let data = []; 
 data.push(trace1);
@@ -37,3 +37,35 @@ let layout = {
     }
 };
 Plotly.newPlot(myGraph, data, layout);
+
+//---------------
+
+let trace2 = {}; 
+trace2.mode = "lines+markers+text"; 
+trace2.type = "scatter"; 
+trace2.name = "高中";
+trace2.marker = {
+    size: 5
+}
+trace2.x = [];
+trace2.y = [];
+trace2.text = [];
+trace2.textposition = 'top center'; // Set text position
+trace2.textfont = {
+    size: 10
+}
+for (let i = 0; i < college.length; i++) { 
+    trace2.x[i] = college[i][0];
+    trace2.y[i] = college[i][1]; 
+    trace2.text[i] = college[i][1]+'人';
+}
+data = []; 
+data.push(trace1); 
+data.push(trace2);
+layout = { 
+    margin:{
+    t:0 
+}
+};
+Plotly.newPlot(myGraph, data, layout);
+
