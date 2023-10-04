@@ -43,7 +43,7 @@ Plotly.newPlot(myGraph, data, layout);
 let trace2 = {}; 
 trace2.mode = "lines+markers+text"; 
 trace2.type = "scatter"; 
-trace2.name = "高中";
+trace2.name = "大學";
 trace2.marker = {
     size: 5
 }
@@ -62,10 +62,103 @@ for (let i = 0; i < college.length; i++) {
 data = []; 
 data.push(trace1); 
 data.push(trace2);
-layout = { 
-    margin:{
-    t:0 
-}
-};
+
 Plotly.newPlot(myGraph, data, layout);
 
+//---------------
+
+let trace3 = {}; 
+trace3.mode = "lines+markers+text"; 
+trace3.type = "scatter"; 
+trace3.name = "高中";
+trace3.marker = {
+    size: 5
+}
+trace3.x = [];
+trace3.y = [];
+trace3.text = [];
+trace3.textposition = 'top center'; // Set text position
+trace3.textfont = {
+    size: 10
+}
+for (let i = 0; i < high_school.length; i++) { 
+    trace3.x[i] = high_school[i][0];
+    trace3.y[i] = high_school[i][1]; 
+    trace3.text[i] = high_school[i][1]+'人';
+}
+data = []; 
+data.push(trace1); 
+data.push(trace2);
+data.push(trace3);
+
+Plotly.newPlot(myGraph, data, layout);
+
+//---------------
+
+let trace4 = {}; 
+trace4.mode = "lines+markers+text"; 
+trace4.type = "scatter"; 
+trace4.name = "國中小";
+trace4.marker = {
+    size: 5
+}
+trace4.x = [];
+trace4.y = [];
+trace4.text = [];
+trace4.textposition = 'top center'; // Set text position
+trace4.textfont = {
+    size: 10
+}
+for (let i = 0; i < middle_school_and_below.length; i++) { 
+    trace4.x[i] = middle_school_and_below[i][0];
+    trace4.y[i] = middle_school_and_below[i][1]; 
+    trace4.text[i] = middle_school_and_below[i][1]+'人';
+}
+data = []; 
+data.push(trace1); 
+data.push(trace2);
+data.push(trace3);
+data.push(trace4);
+Plotly.newPlot(myGraph, data, layout);
+
+//----------
+
+// Create an initial data array with all datasets
+let initialData = [trace1, trace2, trace3, trace4];
+
+// Create the plot with the initial data
+Plotly.newPlot(myGraph, initialData, layout);
+
+// Function to update the chart based on checkbox status
+function updateChart() {
+    let newData = [];
+
+    // Check the status of each checkbox and add the corresponding trace to the new data array
+    if (dataset1Checkbox.checked) {
+        newData.push(trace1);
+    }
+    if (dataset2Checkbox.checked) {
+        newData.push(trace2);
+    }
+    if (dataset3Checkbox.checked) {
+        newData.push(trace3);
+    }
+    if (dataset4Checkbox.checked) {
+        newData.push(trace4);
+    }
+
+    // Update the chart with the new data
+    Plotly.newPlot(myGraph, newData, layout);
+}
+
+// Get references to the checkboxes
+let dataset1Checkbox = document.getElementById('dataset1');
+let dataset2Checkbox = document.getElementById('dataset2');
+let dataset3Checkbox = document.getElementById('dataset3');
+let dataset4Checkbox = document.getElementById('dataset4');
+
+// Add event listeners to the checkboxes
+dataset1Checkbox.addEventListener('change', updateChart);
+dataset2Checkbox.addEventListener('change', updateChart);
+dataset3Checkbox.addEventListener('change', updateChart);
+dataset4Checkbox.addEventListener('change', updateChart);

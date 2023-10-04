@@ -1,11 +1,25 @@
-<!DOCTYPE html> <html>
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="utf-8">
 <title></title>
 <link rel="stylesheet" href="style.css">
-</head> <body>
+</head>
+<body>
 <div id="myGraph"></div>
 <div>每年學生懷孕人數在107年之前都沒有太大的變化，在107年後有顯著的提升，原本猜測是社會上的趨勢或是一種社會現象，幾過調查後，該資料在107年後更改調查方式，因此在107年後才會有顯著的提升。</div>
-<script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script> <script src="data.js"></script>
+
+<!-- Add a button for dataset toggle -->
+<div id="checkboxes">
+    <label><input type="checkbox" id="dataset1" checked> 大學以下總人數</label>
+    <label><input type="checkbox" id="dataset2" checked> 大學</label>
+    <label><input type="checkbox" id="dataset3" checked> 高中</label>
+    <label><input type="checkbox" id="dataset4" checked> 國中小</label>
+</div>
+
+
+<script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+<script src="data.js"></script>
 <script src="main.js"></script>
-</body> </html>
+</body>
+</html>
